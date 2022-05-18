@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+<!---->
+        <record model="ir.actions.act_window" id="al_courses">
+            <field name="name">Courses</field>
+            <field name="res_model">course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+<!---->
+        <menuitem id="oa_courses_menu" name="Courses" sequence="0" action="al_courses"/>
+        <menuitem id="oa_courses_menu_list" parent="oa_courses_menu" name="List" sequence="1"/>
+        <menuitem id="oa_courses_menu_add" parent="oa_courses_menu" name="Add" sequence="2"/>
+
+    </data>
+</odoo>
