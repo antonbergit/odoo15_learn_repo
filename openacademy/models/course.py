@@ -8,3 +8,5 @@ class course(models.Model):
 
     title = fields.Char(string="Title", required=True)
     description = fields.Text(string="Description", required=False)
+    
+    omf = fields.Char()
