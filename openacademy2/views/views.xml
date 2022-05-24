@@ -1,0 +1,163 @@
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="oa2_action_courses">
+            <field name="name">Courses management</field>
+            <field name="res_model">openacademy2.courses</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="oa2_action_sessions">
+            <field name="name">Sessions management</field>
+            <field name="res_model">openacademy2.sessions</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                name="Open Academy 2"
+                id="oa2_menu_root"
+                sequence="5"
+        />
+
+        <menuitem
+                name="Dictionaries"
+                id="oa2_menu_content"
+                parent="oa2_menu_root"
+                sequence="15"
+        />
+
+        <menuitem
+                name="Courses"
+                id="oa2_menu_courses"
+                parent="oa2_menu_content"
+                action="oa2_action_courses"
+                sequence="25"
+        />
+
+        <menuitem
+                name="Sessions"
+                id="oa2_menu_sessions"
+                parent="oa2_menu_content"
+                action="oa2_action_sessions"
+                sequence="35"
+        />
+
+        <record model="ir.ui.view" id="oa2_courses_form">
+            <field name="name">openacademy2.courses.form</field>
+            <field name="model">openacademy2.courses</field>
+            <field name="arch" type="xml">
+                <form>
+                    <notebook>
+                        <page string="Main content">
+                            <group colspan="2">
+                                <separator colspan="2" string="Title and Description"/>
+                                <field name="title"/>
+                                <field name="description"/>
+                            </group>
+                        </page>
+                        <page string="Links">
+                            <field name="responsible"/>
+                        </page>
+                        <page string="Sessions">
+                            <field name="session">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="start_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_courses_tree">
+            <field name="name">openacademy2.courses.tree</field>
+            <field name="model">openacademy2.courses</field>
+            <field name="arch" type="xml">
+                <tree string="Courses list">
+                    <field name="title"/>
+                    <field name="description"/>
+                    <field name="responsible"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_courses_search">
+            <field name="name">openacademy2.courses.search</field>
+            <field name="model">openacademy2.courses</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="title"/>
+                    <field name="description"/>
+                    <field name="responsible"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_sessions_form">
+            <field name="name">openacademy2.sessions.form</field>
+            <field name="model">openacademy2.sessions</field>
+            <field name="arch" type="xml">
+                <form>
+                    <notebook>
+                        <page string="Main content">
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </page>
+                        <page string="Options">
+                            <group colspan="3">
+                                <field name="start_date"/>
+                                <field name="duration"/>
+                                <field name="seats"/>
+                            </group>
+                        </page>
+                        <page string="Links">
+                            <group colspan="2">
+                                <field name="instructor"/>
+                                <field name="course"/>
+                            </group>
+                        </page>
+                        <page string="Attendees">
+                            <field name="attendees">
+                                <tree>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_sessions_tree">
+            <field name="name">openacademy2.sessions.tree</field>
+            <field name="model">openacademy2.sessions</field>
+            <field name="arch" type="xml">
+                <tree string="Sessions list">
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="duration"/>
+                    <field name="seats"/>
+                    <field name="instructor"/>
+                    <field name="course"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_sessions_search">
+            <field name="name">openacademy2.sessions.search</field>
+            <field name="model">openacademy2.sessions</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="start_date"/>
+                    <field name="duration"/>
+                    <field name="seats"/>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>
