@@ -27,3 +27,10 @@ class sessions(models.Model):
     instructor = fields.Many2one('res.partner', string = "Instructor/Trainer")
     course = fields.Many2one('openacademy2.courses', required = False, string = "Course id")
     attendees = fields.Many2many('res.partner', string = "Attendees")
+
+class partner(models.Model):
+    _name = 'res.partner'
+    _inherit = 'res.partner'
+
+    instructor = fields.Boolean(stirng = 'I am instructor')
+    session = fields.Many2many('openacademy2.sessions')
