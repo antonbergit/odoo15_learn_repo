@@ -13,6 +13,12 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <record model="ir.actions.act_window" id="oa2_action_partner">
+            <field name="name">Partner management</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
         <menuitem
                 name="Open Academy 2"
                 id="oa2_menu_root"
@@ -40,6 +46,14 @@
                 parent="oa2_menu_content"
                 action="oa2_action_sessions"
                 sequence="35"
+        />
+
+        <menuitem
+                name="Partners"
+                id="oa2_menu_partners"
+                parent="oa2_menu_content"
+                action="oa2_action_partner"
+                sequence="45"
         />
 
         <record model="ir.ui.view" id="oa2_courses_form">
@@ -141,7 +155,7 @@
                     <field name="duration"/>
                     <field name="seats"/>
                     <field name="instructor"/>
-                    <field name="course"/>
+                    <field name="course" invisible="1"/>
                 </tree>
             </field>
         </record>
@@ -158,6 +172,23 @@
                 </search>
             </field>
         </record>
+
+        <record model="ir.ui.view" id="oa2_partner_form">
+            <field name="name">openacademy2.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="before">
+                    <field name="instructor" />
+                    <label for="instructor" />
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page string="Sessions">
+                        <field name="session" />
+                    </page>
+                </xpath>
+            </field>
+    </record>
 
     </data>
 </odoo>
