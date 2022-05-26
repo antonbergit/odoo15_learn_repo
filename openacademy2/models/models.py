@@ -33,4 +33,9 @@ class partner(models.Model):
     _inherit = 'res.partner'
 
     instructor = fields.Boolean(stirng = 'I am instructor')
+    teacher = fields.Selection(
+                                [('l1','Level 1'),
+                                 ('l2','Level 2')]
+        ,string="Teacher level")
+
     session = fields.Many2many('openacademy2.sessions')
