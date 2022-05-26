@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="oa2_courses_form">
+            <field name="name">openacademy2.courses.form</field>
+            <field name="model">openacademy2.courses</field>
+            <field name="arch" type="xml">
+                <form>
+                    <notebook>
+                        <page string="Main content">
+                            <group colspan="2">
+                                <separator colspan="2" string="Title and Description"/>
+                                <field name="title"/>
+                                <field name="description"/>
+                            </group>
+                        </page>
+                        <page string="Links">
+                            <field name="responsible"/>
+                        </page>
+                        <page string="Sessions">
+                            <field name="session">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="start_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_courses_tree">
+            <field name="name">openacademy2.courses.tree</field>
+            <field name="model">openacademy2.courses</field>
+            <field name="arch" type="xml">
+                <tree string="Courses list">
+                    <field name="title"/>
+                    <field name="description"/>
+                    <field name="responsible"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_courses_search">
+            <field name="name">openacademy2.courses.search</field>
+            <field name="model">openacademy2.courses</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="title"/>
+                    <field name="description"/>
+                    <field name="responsible"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

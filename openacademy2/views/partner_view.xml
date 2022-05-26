@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="oa2_partner_form">
+            <field name="name">openacademy2.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page string="Instructor/Teacher ">
+                        <group>
+                            <field name="instructor"/>
+                            <field name="teacher" style="width:20%%"/>
+                        </group>
+                    </page>
+                    <page string="Sessions">
+                        <field name="session"/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="oa2_partner_view_search" model="ir.ui.view">
+            <field name="name">res.partner.search.oa2.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='inactive']" position="before">
+                    <filter string="Instructors only" name="instructor"
+                            domain="[('instructor','=', True)]"/>
+                    <filter string="Instructors and Teachers" name="instructornteacher"
+                            domain="['|',('instructor','=', True),
+                                    ('teacher','!=', '')]"/>
+                    <separator/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
