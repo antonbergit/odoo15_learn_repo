@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+
+        <record model="ir.actions.act_window" id="oa2_action_courses">
+            <field name="name">Courses management</field>
+            <field name="res_model">openacademy2.courses</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="oa2_action_sessions">
+            <field name="name">Sessions management</field>
+            <field name="res_model">openacademy2.sessions</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="oa2_action_partner">
+            <field name="name">Partner management</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+                name="Open Academy 2"
+                id="oa2_menu_root"
+                sequence="5"
+        />
+
+        <menuitem
+                name="Dictionaries"
+                id="oa2_menu_content"
+                parent="oa2_menu_root"
+                sequence="15"
+        />
+
+        <menuitem
+                name="Courses"
+                id="oa2_menu_courses"
+                parent="oa2_menu_content"
+                action="oa2_action_courses"
+                sequence="25"
+        />
+
+        <menuitem
+                name="Sessions"
+                id="oa2_menu_sessions"
+                parent="oa2_menu_content"
+                action="oa2_action_sessions"
+                sequence="35"
+        />
+
+        <menuitem
+                name="Partners"
+                id="oa2_menu_partners"
+                parent="oa2_menu_content"
+                action="oa2_action_partner"
+                sequence="45"
+        />
+
+    </data>
+</odoo>
