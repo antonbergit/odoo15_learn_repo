@@ -6,15 +6,17 @@ class sessions(models.Model):
     _description = 'Quest 2.3.7'
 
     name = fields.Char(string = "Session ident name")
-    start_date = fields.Date(string = "First day", default=Date.today())
+    start_date = fields.Date(string = "First day", default=fields.Date.today())
     duration = fields.Integer(string = "Duration on weeks")
     seats = fields.Integer(string = "Number of seats")
+    seats_reserved = fields.Float(compute = '_seats_reserved')
+    active = fields.Boolean(default=True)
 
     instructor = fields.Many2one('res.partner', string = "Instructor/Trainer")
     course = fields.Many2one('openacademy2.courses', required = False, string = "Course id")
     attendees = fields.Many2many('res.partner', string = "Attendees")
 
-    seats_reserved = fields.Float(compute = '_seats_reserved')
+
 
     @api.depends('seats','attendees')
     def _seats_reserved(self):
