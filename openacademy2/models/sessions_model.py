@@ -25,3 +25,20 @@ class sessions(models.Model):
                 rec_session.seats_reserved = 100 * len(rec_session.attendees) / rec_session.seats
             else:
                 rec_session.seats_reserved = 0.0
+
+    @api.onchange('seats','attendees')
+    def _seats_reserve_check(self):
+        if (self.seats <= 0):
+            return {
+                'warning': {
+                    'title': "Seats enter exception",
+                    'message': "A number of seats must be a positive value"
+                }
+            }
+        if (len(self.attendees)>self.seats):
+            return {
+                'warning': {
+                    'title': "Attendees enter exception",
+                    'message': "A number of attendees can not be more then seats count"
+                }
+            }
