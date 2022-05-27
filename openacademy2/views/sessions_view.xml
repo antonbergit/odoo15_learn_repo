@@ -12,10 +12,11 @@
                             </group>
                         </page>
                         <page string="Options">
-                            <group colspan="3">
+                            <group colspan="4">
                                 <field name="start_date"/>
                                 <field name="duration"/>
                                 <field name="seats"/>
+                                <field name="seats_reserved" widget="progressbar"/>
                             </group>
                         </page>
                         <page string="Links">
@@ -47,6 +48,7 @@
                     <field name="start_date"/>
                     <field name="duration"/>
                     <field name="seats"/>
+                    <field name="seats_reserved" widget="progressbar"/>
                     <field name="instructor"/>
                     <field name="course" invisible="1"/>
                 </tree>
