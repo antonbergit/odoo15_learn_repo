@@ -13,7 +13,14 @@ class courses(models.Model):
     session = fields.One2many('openacademy2.sessions','course')
 
     _sql_constraints = [
-        ('name_is_not_equal_to_desc',
-         'CHECK(title!=description)',
-         'Enter more specific description')
+        (
+            'title_is_not_equal_to_desc',
+            'CHECK(title!=description)',
+            'Enter more specific description'),
+
+        (
+           'title_is_unique',
+            'UNIQUE(title)',
+            'Enter valid unique title'
+        )
     ]
