@@ -16,7 +16,8 @@ class courses(models.Model):
         (
             'title_is_not_equal_to_desc',
             'CHECK(title!=description)',
-            'Enter more specific description'),
+            'Enter more specific description'
+        ),
 
         (
            'title_is_unique',
@@ -24,3 +25,8 @@ class courses(models.Model):
             'Enter valid unique title'
         )
     ]
+
+    def copy(self, default=None):
+        new_copy_title = 'Copy of ' + self.title
+        default = dict(default or {}, title=new_copy_title)
+        return super(courses, self).copy(default)
