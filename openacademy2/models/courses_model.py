@@ -11,3 +11,9 @@ class courses(models.Model):
     responsible = fields.Many2one('res.users', string = "Author/Responsible")
 
     session = fields.One2many('openacademy2.sessions','course')
+
+    _sql_constraints = [
+        ('name_is_not_equal_to_desc',
+         'CHECK(title!=description)',
+         'Enter more specific description')
+    ]
