@@ -8,8 +8,8 @@ class sessions(models.Model):
 
     name = fields.Char(string = "Session ident name")
     start_date = fields.Date(string = "First day", default=fields.Date.today())
-    duration = fields.Integer(string = "Duration on weeks")
-    seats = fields.Integer(string = "Number of seats")
+    duration = fields.Integer(string = "Duration on days", default=10)
+    seats = fields.Integer(string = "Number of seats", default=1)
     seats_reserved = fields.Float(compute = '_seats_reserved')
     active = fields.Boolean(default=True)
 
