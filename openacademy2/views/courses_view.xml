@@ -46,9 +46,12 @@
             <field name="model">openacademy2.courses</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="title"/>
-                    <field name="description"/>
+                    <field name="title" filter_domain="['|', ('title','ilike',self), ('description','ilike',self)]"/>
                     <field name="responsible"/>
+                    <filter name="my_courses" string="My Courses" domain="[('responsible', '=', uid)]" />
+                    <group string="Group by responsible">
+                        <filter name="by_responsible" string="Responsible" context="{'group_by': 'responsible'}"/>
+                    </group>
                 </search>
             </field>
         </record>

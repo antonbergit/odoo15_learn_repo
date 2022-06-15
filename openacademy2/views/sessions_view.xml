@@ -43,7 +43,8 @@
             <field name="name">openacademy2.sessions.tree</field>
             <field name="model">openacademy2.sessions</field>
             <field name="arch" type="xml">
-                <tree string="Sessions list">
+                <!--<tree string="Sessions list" editable="bottom" decoration-primary="duration &gt; 5" decoration-danger="duration &gt; 15">-->
+                <tree string="Sessions list" decoration-primary="duration &gt; 5" decoration-danger="duration &gt; 15">
                     <field name="name"/>
                     <field name="start_date"/>
                     <field name="duration"/>
@@ -65,6 +66,62 @@
                     <field name="duration"/>
                     <field name="seats"/>
                 </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_sessions_calendar">
+            <field name="name">openacademy2.sessions.calendar</field>
+            <field name="model">openacademy2.sessions</field>
+            <field name="arch" type="xml">
+                <calendar string="Sessions" date_start="start_date">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_sessions_gantt">
+            <field name="name">openacademy2.sessions.gantt</field>
+            <field name="model">openacademy2.sessions</field>
+            <field name="arch" type="xml">
+                <gantt string="Sessions"
+                    date_start="start_date"
+                    default_group_by="responsible" />
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_sessions_graph">
+            <field name="name">openacademy2.sessions.graph</field>
+            <field name="model">openacademy2.sessions</field>
+            <field name="arch" type="xml">
+                <graph string="Total attendees by session">
+                    <field name="course"/>
+                    <field name="seats" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oa2_sessions_kanban">
+            <field name="name">openacademy2.sessions.kanban</field>
+            <field name="model">openacademy2.sessions</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="course">
+                    <field name="course"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li>
+                                            <h3><field name="name"/></h3>
+                                        </li>
+                                        <li><strong>Start and duration:</strong> <field name="start_date"/> - <field name="duration"/></li>
+                                        <li><strong>Seats:</strong> <field name="seats"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
             </field>
         </record>
     </data>

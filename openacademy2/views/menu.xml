@@ -4,13 +4,14 @@
         <record model="ir.actions.act_window" id="oa2_action_courses">
             <field name="name">Courses management</field>
             <field name="res_model">openacademy2.courses</field>
+            <field name="context">{"search_default_responsible":uid}</field>
             <field name="view_mode">tree,form</field>
         </record>
 
         <record model="ir.actions.act_window" id="oa2_action_sessions">
             <field name="name">Sessions management</field>
             <field name="res_model">openacademy2.sessions</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,calendar,gantt,graph,kanban</field>
         </record>
 
         <record model="ir.actions.act_window" id="oa2_action_partner">
