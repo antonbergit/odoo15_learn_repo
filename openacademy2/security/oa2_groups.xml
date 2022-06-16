@@ -1,0 +1,9 @@
+<odoo>
+    <record id="oa2_all_read" model="res.groups">
+        <field name="name">oa2 all read</field>
+    </record>
+
+    <record id="oa2_manager" model="res.groups">
+        <field name="name">oa2 manager</field>
+    </record>
+</odoo>

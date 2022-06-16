@@ -4,7 +4,7 @@ from odoo.exceptions import ValidationError
 
 class sessions(models.Model):
     _name = 'openacademy2.sessions'
-    _description = 'Quest 2.3.7'
+    _description = 'Open Academy 2 Sessions'
 
     name = fields.Char(string = "Session ident name")
     start_date = fields.Date(string = "First day", default=fields.Date.today())

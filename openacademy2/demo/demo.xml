@@ -45,23 +45,23 @@
 
         <record id="Session1" model="openacademy2.sessions">
             <field name="name">Fall 2021</field>
-            <field name="start_date">2021-09-01</field>
+            <field name="start_date">2022-06-01</field>
             <field name="duration">16</field>
-            <field name="seats">200</field>
+            <field name="seats">10</field>
         </record>
 
         <record id="Session2" model="openacademy2.sessions">
             <field name="name">Spring 2022</field>
-            <field name="start_date">2022-02-01</field>
-            <field name="duration">20</field>
-            <field name="seats">150</field>
+            <field name="start_date">2022-06-10</field>
+            <field name="duration">2</field>
+            <field name="seats">7</field>
         </record>
 
         <record id="Session3" model="openacademy2.sessions">
             <field name="name">Fall 2022</field>
-            <field name="start_date">2022-09-01</field>
-            <field name="duration">16</field>
-            <field name="seats">100</field>
+            <field name="start_date">2022-06-15</field>
+            <field name="duration">10</field>
+            <field name="seats">5</field>
         </record>
 
     </data>

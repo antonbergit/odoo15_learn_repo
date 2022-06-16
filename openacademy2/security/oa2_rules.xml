@@ -1,0 +1,12 @@
+<odoo>
+    <record model="ir.rule" id="oa2_courses_unmodify_responsible">
+        <field name="name">Responsibles cannot modify courses</field>
+        <field name="model_id" ref="model_openacademy2_courses"/>
+        <field name="groups" eval="[(4,ref('openacademy2.oa2_manager'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="0" />
+        <field name="domain_force">[('responsible','=',user.id)]</field>
+    </record>
+</odoo>

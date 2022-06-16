@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class courses(models.Model):
     _name = 'openacademy2.courses'
-    _description = 'Quest 2.3.3'
+    _description = 'Open Academy 2 Courses'
 
     title = fields.Char(string = "Title of a course", required = True)
     description = fields.Text(string = "Short course description", required = False)

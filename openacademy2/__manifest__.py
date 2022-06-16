@@ -25,8 +25,13 @@
 
     # always loaded
     'data': [
+        'security/oa2_groups.xml',
         'security/ir.model.access.csv',
-        'views/views.xml'
+        'security/oa2_rules.xml',
+        'views/menu.xml',
+        'views/courses_view.xml',
+        'views/sessions_view.xml',
+        'views/partner_view.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
