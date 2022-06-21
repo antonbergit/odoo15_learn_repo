@@ -1,7 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_openacademy2_courses_read,access.openacademy2.courses.allread,model_openacademy2_courses,base.group_user,1,0,0,0
-access_openacademy2_courses_read,access.openacademy2.courses.allread,model_openacademy2_courses,openacademy2.oa2_all_read,1,0,0,0
+access_openacademy2_courses_read1,access.openacademy2.courses.allread1,model_openacademy2_courses,base.group_user,1,0,0,0
+access_openacademy2_courses_read2,access.openacademy2.courses.allread2,model_openacademy2_courses,openacademy2.oa2_all_read,1,0,0,0
 access_openacademy2_courses_full,access.openacademy2.courses.full,model_openacademy2_courses,openacademy2.oa2_manager,1,1,1,1
-access_openacademy2_sessions_read,access.openacademy2.sessions.allread,model_openacademy2_sessions,base.group_user,1,0,0,0
-access_openacademy2_sessions_read,access.openacademy2.sessions.allread,model_openacademy2_sessions,openacademy2.oa2_all_read,1,0,0,0
+access_openacademy2_sessions_read1,access.openacademy2.sessions.allread1,model_openacademy2_sessions,base.group_user,1,0,0,0
+access_openacademy2_sessions_read2,access.openacademy2.sessions.allread2,model_openacademy2_sessions,openacademy2.oa2_all_read,1,0,0,0
 access_openacademy2_sessions_full,access.openacademy2.sessions.full,model_openacademy2_sessions,openacademy2.oa2_manager,1,1,1,1
+access_openacademy2_formfill,access.openacademy2.formfill,model_openacademy2_formfill,base.group_user,1,1,1,1

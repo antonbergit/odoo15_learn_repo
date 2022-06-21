@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="oa2_formfill_wizard_form">
+            <field name="name">openacademy2.formfill.form</field>
+            <field name="model">openacademy2.formfill</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="rel_sessions" default=""/>
+                    <field name="rel_partner">
+                        <tree>
+                            <field name="name"/>
+                        </tree>
+                    </field>
+                </form>
+                <footer>
+                    <button string="Save Attendees list" class="btn-primary" type="object" name="save_attendees"/>
+                    <button string="Close without saving" special="cancel" />
+                </footer>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="oa2_launch_formfill">
+            <field name="name">Launch the formfill Wizard</field>
+            <field name="res_model">openacademy2.formfill</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="model_openacademy2_sessions"/>
+        </record>
+
+    </data>
+</odoo>

@@ -43,8 +43,7 @@
             <field name="name">openacademy2.sessions.tree</field>
             <field name="model">openacademy2.sessions</field>
             <field name="arch" type="xml">
-                <!--<tree string="Sessions list" editable="bottom" decoration-primary="duration &gt; 5" decoration-danger="duration &gt; 15">-->
-                <tree string="Sessions list" decoration-primary="duration &gt; 5" decoration-danger="duration &gt; 15">
+                <tree string="Sessions list" editable="bottom" decoration-primary="duration &gt; 5" decoration-danger="duration &gt; 15">
                     <field name="name"/>
                     <field name="start_date"/>
                     <field name="duration"/>
@@ -52,6 +51,7 @@
                     <field name="seats_reserved" widget="progressbar"/>
                     <field name="instructor"/>
                     <field name="course" invisible="1"/>
+                    <button name="%(oa2_launch_formfill)d" string="Attendees" type="action"/>
                 </tree>
             </field>
         </record>

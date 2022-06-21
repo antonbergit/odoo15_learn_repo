@@ -4,9 +4,9 @@
         <field name="model_id" ref="model_openacademy2_courses"/>
         <field name="groups" eval="[(4,ref('openacademy2.oa2_manager'))]"/>
         <field name="perm_read" eval="1"/>
-        <field name="perm_write" eval="0"/>
+        <field name="perm_write" eval="1"/>
         <field name="perm_create" eval="1"/>
-        <field name="perm_unlink" eval="0" />
-        <field name="domain_force">[('responsible','=',user.id)]</field>
+        <field name="perm_unlink" eval="1" />
+        <field name="domain_force">['|',('responsible','=',user.id),('responsible','=',False)]</field>
     </record>
 </odoo>

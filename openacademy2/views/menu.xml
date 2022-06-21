@@ -50,6 +50,14 @@
         />
 
         <menuitem
+                name="Sessions Attendees"
+                id="oa2_menu_sessions_attendees"
+                parent="oa2_menu_content"
+                action="oa2_launch_formfill"
+                sequence="36"
+        />
+
+        <menuitem
                 name="Partners"
                 id="oa2_menu_partners"
                 parent="oa2_menu_content"

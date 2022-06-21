@@ -13,7 +13,7 @@
                                 <field name="description"/>
                             </group>
                         </page>
-                        <page string="Links">
+                        <page string="Author">
                             <field name="responsible"/>
                         </page>
                         <page string="Sessions">
