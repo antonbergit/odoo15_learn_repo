@@ -6,7 +6,11 @@
             <field name="model">openacademy2.formfill</field>
             <field name="arch" type="xml">
                 <form>
-                    <field name="rel_sessions" default=""/>
+                    <field name="rel_sessions">
+                        <tree>
+                            <field name="name"/>
+                        </tree>
+                    </field>
                     <field name="rel_partner">
                         <tree>
                             <field name="name"/>
