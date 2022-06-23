@@ -16,11 +16,11 @@
                             <field name="name"/>
                         </tree>
                     </field>
-                </form>
-                <footer>
+                 <footer>
                     <button string="Save Attendees list" class="btn-primary" type="object" name="save_attendees"/>
                     <button string="Close without saving" special="cancel" />
                 </footer>
+               </form>
             </field>
         </record>
 

@@ -51,7 +51,6 @@
                     <field name="seats_reserved" widget="progressbar"/>
                     <field name="instructor"/>
                     <field name="course" invisible="1"/>
-                    <button name="%(oa2_launch_formfill)d" string="Attendees" type="action"/>
                 </tree>
             </field>
         </record>

@@ -18,7 +18,6 @@ class formfill(models.TransientModel):
 
     def save_attendees(self):
         for temp_session in self.rel_sessions:
-            if (temp_session):
-                temp_session.attendees = False
-                for temp_attendee in self.rel_partner:
-                    temp_session.attendees |= temp_attendee
+            temp_session.attendees = False
+            for temp_attendee in self.rel_partner:
+                temp_session.attendees |= temp_attendee

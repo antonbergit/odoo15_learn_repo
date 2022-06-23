@@ -30,10 +30,11 @@
         'security/ir.model.access.csv',
         'security/oa2_rules.xml',
         'views/courses_view.xml',
-        'wizards/formfill_view.xml',
         'views/sessions_view.xml',
+        'wizards/formfill_view.xml',
         'views/partner_view.xml',
         'views/menu.xml',
+        'reports/session_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
