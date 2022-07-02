@@ -2,7 +2,7 @@
     <record id="oa2_session_report" model="ir.actions.report">
         <field name="name">Sessions</field>
         <field name="model">openacademy2.sessions</field>
-        <field name="report_type">qweb-pdf</field>
+        <field name="report_type">qweb-html</field>
         <field name="report_name">openacademy2.session_report</field>
         <field name="report_file">openacademy2.session_report</field>
         <field name="binding_model_id" ref="model_openacademy2_sessions"/>

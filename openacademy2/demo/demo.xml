@@ -43,6 +43,12 @@
             </field>
         </record>
 
+        <record id="Course7" model="openacademy2.courses">
+            <field name="title">For XMLRPC</field>
+            <field name="description">For remote use
+            </field>
+        </record>
+
         <record id="Session1" model="openacademy2.sessions">
             <field name="name">Fall 2021</field>
             <field name="start_date">2022-06-01</field>
