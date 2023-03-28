@@ -56,4 +56,4 @@ xml_session = call(url, "object", "execute_kw",DB, uid, PASS,'openacademy2.sessi
 xml_course = call(url, "object", "execute_kw",DB, uid, PASS,'openacademy2.courses','search_read', [[('id','=',xml_course['id'])]],{'limit':1})[0]
 print("Course %s linked to Session %s" % (xml_course['title'],xml_session['name']))
 
-print('XML-RPC test finished')
+print('JSON-RPC test finished')
